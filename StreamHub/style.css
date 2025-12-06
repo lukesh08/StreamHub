@@ -1,0 +1,406 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #141414;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Auth Page Styles */
+.auth-page {
+    min-height: 100vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+                url('https://images.unsplash.com/photo-1574267432644-f76c764e8082?w=1920&h=1080&fit=crop');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.auth-container {
+    background: rgba(0,0,0,0.85);
+    padding: 60px 68px 40px;
+    border-radius: 4px;
+    max-width: 450px;
+    width: 100%;
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.auth-logo {
+    font-size: 40px;
+    font-weight: bold;
+    color: #e50914;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.auth-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 28px;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 16px 20px;
+    background: #333;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.form-input:focus {
+    outline: none;
+    background: #454545;
+}
+
+.form-input::placeholder {
+    color: #8c8c8c;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    background: #e50914;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 24px;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover {
+    background: #f40612;
+}
+
+.form-switch {
+    margin-top: 20px;
+    color: #737373;
+    text-align: center;
+}
+
+.form-switch a {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.form-switch a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    color: #e87c03;
+    font-size: 13px;
+    margin-top: 6px;
+    display: none;
+}
+
+/* Main Site Styles */
+.main-site {
+    display: none;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: background-color 0.3s;
+}
+
+.navbar.scrolled {
+    background-color: #141414;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: #e50914;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #e5e5e5;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #b3b3b3;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.user-email {
+    font-size: 14px;
+    color: #e5e5e5;
+}
+
+.btn-logout {
+    padding: 8px 20px;
+    background: #e50914;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-logout:hover {
+    background: #f40612;
+    transform: scale(1.05);
+}
+
+.hero {
+    height: 80vh;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(20,20,20,1)),
+                url('https://i.guim.co.uk/img/media/344f3917f3e40dbb745e498dd31ab84e4b098981/0_901_3000_2400/master/3000.jpg?width=1200&quality=85&auto=format&fit=max&s=ac0d4a27f8be74812ac9801331e6213c');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    animation: heroFade 1s ease-in;
+}
+
+@keyframes heroFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.hero-content {
+    max-width: 500px;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    animation: slideUp 0.8s ease-out;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-content p {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 25px;
+    animation: slideUp 1s ease-out;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    animation: slideUp 1.2s ease-out;
+}
+
+.btn {
+    padding: 12px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-play {
+    background-color: #fff;
+    color: #000;
+}
+
+.btn-play:hover {
+    background-color: rgba(255,255,255,0.75);
+    transform: scale(1.05);
+}
+
+.btn-info {
+    background-color: rgba(109,109,110,0.7);
+    color: #fff;
+}
+
+.btn-info:hover {
+    background-color: rgba(109,109,110,0.4);
+    transform: scale(1.05);
+}
+
+.movie-rows {
+    margin-top: -150px;
+    position: relative;
+    z-index: 10;
+    padding: 0 50px;
+}
+
+.movie-row {
+    margin-bottom: 40px;
+}
+
+.row-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.row-posters {
+    display: flex;
+    gap: 10px;
+    overflow-x: scroll;
+    padding: 20px 0;
+    scrollbar-width: none;
+}
+
+.row-posters::-webkit-scrollbar {
+    display: none;
+}
+
+.movie-poster {
+    min-width: 200px;
+    height: 300px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 16px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+    font-weight: 600;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.movie-poster::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.8));
+    z-index: 1;
+    transition: all 0.3s;
+}
+
+.movie-poster:hover::before {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.6));
+}
+
+.movie-poster span {
+    position: relative;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.movie-poster:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+}
+
+footer {
+    padding: 50px;
+    color: #808080;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.logout-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+}
+
+.logout-message {
+    background: #141414;
+    padding: 40px 60px;
+    border-radius: 8px;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in;
+}
+
+.logout-message h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .auth-container {
+        padding: 40px 30px;
+    }
+
+    .navbar {
+        padding: 20px 20px;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        padding: 0 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 32px;
+    }
+
+    .movie-rows {
+        padding: 0 20px;
+    }
+}

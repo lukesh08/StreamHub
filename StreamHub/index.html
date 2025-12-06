@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamHub - Watch Movies & TV Shows</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Auth Page -->
+    <div class="auth-page" id="authPage">
+        <div class="auth-container">
+            <div class="auth-logo">StreamHub</div>
+            
+            <!-- Login Form -->
+            <div id="loginForm">
+                <h1 class="auth-title">Sign In</h1>
+                <form onsubmit="handleLogin(event)">
+                    <div class="form-group">
+                        <input type="email" class="form-input" id="loginEmail" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-input" id="loginPassword" placeholder="Password" required>
+                        <div class="error-message" id="loginError">Invalid email or password</div>
+                    </div>
+                    <button type="submit" class="btn-submit">Sign In</button>
+                </form>
+                <div class="form-switch">
+                    New to StreamHub? <a onclick="showSignup()">Sign up now</a>
+                </div>
+            </div>
+
+            <!-- Signup Form -->
+            <div id="signupForm" style="display: none;">
+                <h1 class="auth-title">Sign Up</h1>
+                <form onsubmit="handleSignup(event)">
+                    <div class="form-group">
+                        <input type="text" class="form-input" id="signupName" placeholder="Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-input" id="signupEmail" placeholder="Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-input" id="signupPassword" placeholder="Password (min 6 characters)" required minlength="6">
+                    </div>
+                    <button type="submit" class="btn-submit">Sign Up</button>
+                </form>
+                <div class="form-switch">
+                    Already have an account? <a onclick="showLogin()">Sign in now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Site -->
+    <div class="main-site" id="mainSite">
+        <!-- Navbar -->
+        <nav class="navbar" id="navbar">
+            <div class="logo">StreamHub</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#series">TV Shows</a></li>
+                <li><a href="#movies">Movies</a></li>
+                <li><a href="#new">New & Popular</a></li>
+            </ul>
+            <div class="nav-right">
+                <span class="user-email" id="userEmail"></span>
+                <button class="btn-logout" onclick="handleLogout()">Logout</button>
+            </div>
+        </nav>
+
+        <!-- Hero Banner -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Stranger Things</h1>
+                <p>When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl.</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-play" onclick="playVideo()">▶ Play</button>
+                    <button class="btn btn-info" onclick="showInfo()">ℹ More Info</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Movie Rows -->
+        <section class="movie-rows">
+            <div class="movie-row">
+                <h2 class="row-title">Trending Now</h2>
+                <div class="row-posters" id="trending"></div>
+            </div>
+
+            <div class="movie-row">
+                <h2 class="row-title">Popular on StreamHub</h2>
+                <div class="row-posters" id="popular"></div>
+            </div>
+
+            <div class="movie-row">
+                <h2 class="row-title">Action Movies</h2>
+                <div class="row-posters" id="action"></div>
+            </div>
+
+            <div class="movie-row">
+                <h2 class="row-title">Comedies</h2>
+                <div class="row-posters" id="comedy"></div>
+            </div>
+
+            <div class="movie-row">
+                <h2 class="row-title">Horror Movies</h2>
+                <div class="row-posters" id="horror"></div>
+            </div>
+
+            <div class="movie-row">
+                <h2 class="row-title">Documentaries</h2>
+                <div class="row-posters" id="documentary"></div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2024 StreamHub, Inc. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <!-- Logout Overlay -->
+    <div class="logout-overlay" id="logoutOverlay">
+        <div class="logout-message">
+            <h2>Logging out...</h2>
+            <p>See you soon! 👋</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
